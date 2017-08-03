@@ -16,4 +16,10 @@ var CartService = angular.module('CartService', [])
     this.remove = function (index) {
       cart.splice(index, 1);
     };
+    this.add = function (name, price) {
+      cart.push({
+        name: name,
+        price: price
+      })
+    };
   });

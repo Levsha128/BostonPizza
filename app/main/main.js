@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.main', ['ngRoute', 'MenuService'])
+angular.module('myApp.main', ['ngRoute', 'MenuService', 'CartService'])
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/main', {
@@ -9,7 +9,7 @@ angular.module('myApp.main', ['ngRoute', 'MenuService'])
     });
   }])
 
-  .controller('MainCtrl', ['$scope', 'Menu', function ($scope, Menu) {
+  .controller('MainCtrl', ['$scope', 'Menu', 'Cart', function ($scope, Menu, Cart) {
     $scope.menu = Menu.get();
     $scope.sorting = 'none';
     $scope.query = '';
@@ -52,5 +52,6 @@ angular.module('myApp.main', ['ngRoute', 'MenuService'])
     });
     $scope.addToCart = function (pizza) {
       console.log('Add to cart', pizza);
+      Cart.add(pizza.name, pizza.price);
     };
   }]);
