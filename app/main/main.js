@@ -33,6 +33,7 @@ angular.module('myApp.main', ['ngRoute'])
       }
     ];
     $scope.sorting = 'none';
+    $scope.query = '';
     var SORTS = ['none', 'asc', 'desc']; //todo make constant
     var sort = function (menu, sorting) { //pure sort function
       var clonedMenu = menu.slice(0); // clone menu for immutability
@@ -51,8 +52,17 @@ angular.module('myApp.main', ['ngRoute'])
           return clonedMenu;
       }
     };
+    var filter = function (menu, query) {
+      if (!query.length) { //empty query optimization
+        return menu;
+      }
+      var compiledRegEx = new RegExp('.*' + query + '.*');
+      return menu.filter(function (pizza) {
+        return pizza.name.match(compiledRegEx);
+      });
+    };
     $scope.getMenu = function () {
-      return sort($scope.menu, $scope.sorting);
+      return sort(filter($scope.menu, $scope.query), $scope.sorting);
     };
     $scope.changeSort = function () {
       var sortIndex = SORTS.indexOf($scope.sorting);
