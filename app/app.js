@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.main',
   'myApp.cart',
+  'myApp.history',
   'myApp.link',
   'myApp.version'
 ]).
