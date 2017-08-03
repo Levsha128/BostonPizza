@@ -27,3 +27,7 @@
 .active {
   background: #ff7c74;
 }
+
+table td, table th{
+  border: 1px solid black;
+}

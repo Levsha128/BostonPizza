@@ -1,1 +1,22 @@
-<p>This is the partial for view 1.</p>
+<h1>Welcome to Boston Pizza</h1>
+<h3>Menu</h3>
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Ingredients</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="pizza in menu">
+    <td>{{pizza.id}}</td>
+    <td>{{pizza.name}}</td>
+    <td>{{pizza.ingredients.join(',')}}</td>
+    <td>{{pizza.price}}</td>
+    <td><button>Add to cart</button></td>
+  </tr>
+  </tbody>
+</table>
