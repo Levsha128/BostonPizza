@@ -35,4 +35,7 @@ angular.module('myApp.main', ['ngRoute'])
     $scope.menu.map(function (pizza, index) {
       pizza.id = index + 1;
     });
+    $scope.addToCart = function (pizza) {
+      console.log('Add to cart', pizza);
+    };
   }]);

@@ -16,7 +16,7 @@
     <td>{{pizza.name}}</td>
     <td>{{pizza.ingredients.join(',')}}</td>
     <td>{{pizza.price}}</td>
-    <td><button>Add to cart</button></td>
+    <td><button ng-click="addToCart(pizza)">Add to cart</button></td>
   </tr>
   </tbody>
 </table>

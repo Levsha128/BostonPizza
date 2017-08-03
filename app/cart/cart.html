@@ -1,5 +1,23 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<h3>Cart</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="pizza in order">
+    <td>{{pizza.name}}</td>
+    <td>{{pizza.price}}</td>
+    <td><button ng-click="remove($index)">Remove</button></td>
+  </tr>
+  </tbody>
+  <tfoot ng-if="hasItems()">
+  <th></th>
+  <th>{{getTotalPrice()}}</th>
+  <th></th>
+  </tfoot>
+</table>
+<button ng-disabled="!hasItems()" ng-click="buy()">Buy</button>
