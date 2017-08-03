@@ -14,6 +14,11 @@ angular.module('myApp.main', ['ngRoute', 'MenuService', 'CartService'])
     $scope.sorting = 'none';
     $scope.query = '';
     var SORTS = ['none', 'asc', 'desc']; //todo make constant
+    var SORT_ICONS = {
+      'none':'fa-sort',
+      'asc':'fa-sort-asc',
+      'desc':'fa-sort-desc'
+    };
     var sort = function (menu, sorting) { //pure sort function
       var clonedMenu = menu.slice(0); // clone menu for immutability
       switch (sorting) {
@@ -54,4 +59,7 @@ angular.module('myApp.main', ['ngRoute', 'MenuService', 'CartService'])
       console.log('Add to cart', pizza);
       Cart.add(pizza.name, pizza.price);
     };
+    $scope.getSortIcon = function () {
+      return SORT_ICONS[$scope.sorting];
+    }
   }]);

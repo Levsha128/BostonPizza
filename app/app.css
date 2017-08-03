@@ -24,10 +24,13 @@
   padding-right: 0.3em;
 }
 
-.active {
-  background: #ff7c74;
+.nav-padding {
+  padding-top: 40px;
 }
 
-table td, table th{
-  border: 1px solid black;
+.sort-icon{
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
+  user-select: none;
 }

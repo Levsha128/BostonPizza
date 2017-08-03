@@ -28,6 +28,6 @@ angular.module('myApp.cart', ['ngRoute', 'CartService', 'OrderService', 'toastr'
         $scope.getTotalPrice()
       );
       Cart.reset();
-      toastr.success('Success');
+      toastr.success('Items purchased successfully');
     };
   }]);

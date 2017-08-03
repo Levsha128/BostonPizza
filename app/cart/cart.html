@@ -1,5 +1,5 @@
 <h3>Cart</h3>
-<table>
+<table class="table table-striped">
   <thead>
   <tr>
     <th>Name</th>
@@ -11,7 +11,7 @@
   <tr ng-repeat="pizza in cart">
     <td>{{pizza.name}}</td>
     <td>${{pizza.price}}</td>
-    <td><button ng-click="remove($index)">Remove</button></td>
+    <td><button class="btn btn-danger" ng-click="remove($index)">Remove</button></td>
   </tr>
   </tbody>
   <tfoot ng-if="hasItems()">
@@ -20,4 +20,4 @@
   <th></th>
   </tfoot>
 </table>
-<button ng-disabled="!hasItems()" ng-click="buy()">Buy</button>
+<button class="btn btn-success" ng-disabled="!hasItems()" ng-click="buy()">Buy</button>

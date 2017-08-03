@@ -1,17 +1,17 @@
 <h3>History</h3>
-<table>
+<table class="table table-striped">
   <thead>
   <tr>
     <th>Pizzas</th>
     <th>Price</th>
-    <th>Time</th>
+    <th>Ordered</th>
   </tr>
   </thead>
   <tbody>
   <tr ng-repeat="order in getOrders()">
     <td>{{order.title}}</td>
     <td>${{order.totalPrice}}</td>
-    <td>{{order.time}}</td>
+    <td>{{order.time.toLocaleString()}}</td>
   </tr>
   </tbody>
 </table>

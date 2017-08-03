@@ -1,13 +1,16 @@
-<h1>Welcome to Boston Pizza</h1>
 <h3>Menu</h3>
-<label>Find your pizza: <input type="text" ng-model="query" name="query"></label>
-<table>
+<div class="form-inline">
+<div class="form-group">
+<label>Find your pizza: <input class="form-control" type="text" ng-model="query" name="query"></label>
+</div>
+</div>
+<table class="table table-striped">
   <thead>
   <tr>
     <th>#</th>
     <th>Name</th>
     <th>Ingredients</th>
-    <th><span ng-click="changeSort()">[{{sorting}}]</span>Price</th>
+    <th><i class="sort-icon fa" ng-class="getSortIcon()" ng-click="changeSort()"></i>Price</th>
     <th></th>
   </tr>
   </thead>
@@ -17,7 +20,7 @@
     <td>{{pizza.name}}</td>
     <td>{{pizza.ingredients.join(', ')}}</td>
     <td>${{pizza.price}}</td>
-    <td><button ng-click="addToCart(pizza)">Add to cart</button></td>
+    <td><button class="btn btn-success pull-right" ng-click="addToCart(pizza)">Add to cart</button></td>
   </tr>
   </tbody>
 </table>
