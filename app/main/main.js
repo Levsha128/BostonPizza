@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.main', ['ngRoute'])
+angular.module('myApp.main', ['ngRoute', 'MenuService'])
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/main', {
@@ -9,29 +9,8 @@ angular.module('myApp.main', ['ngRoute'])
     });
   }])
 
-  .controller('MainCtrl', ['$scope', function ($scope) {
-    $scope.menu = [
-      {
-        name: 'peperoni',
-        ingredients: ['peperoni', 'tomato', 'mozzarella', 'parmejano'],
-        price: 7.00
-      },
-      {
-        name: 'margarita',
-        ingredients: ['basil', 'tomato', 'mozzarella'],
-        price: 5.75
-      },
-      {
-        name: 'meat',
-        ingredients: ['bacon', 'tomato', 'mozzarella', 'ham', 'salami'],
-        price: 12.00
-      },
-      {
-        name: 'marina',
-        ingredients: ['shrimp', 'parmejano', 'tuna', 'galric'],
-        price: 15.75
-      }
-    ];
+  .controller('MainCtrl', ['$scope', 'Menu', function ($scope, Menu) {
+    $scope.menu = Menu.get();
     $scope.sorting = 'none';
     $scope.query = '';
     var SORTS = ['none', 'asc', 'desc']; //todo make constant
