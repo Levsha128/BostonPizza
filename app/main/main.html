@@ -15,7 +15,7 @@
   <tr ng-repeat="pizza in getMenu()">
     <td>{{pizza.id}}</td>
     <td>{{pizza.name}}</td>
-    <td>{{pizza.ingredients.join(',')}}</td>
+    <td>{{pizza.ingredients.join(', ')}}</td>
     <td>{{pizza.price}}</td>
     <td><button ng-click="addToCart(pizza)">Add to cart</button></td>
   </tr>
