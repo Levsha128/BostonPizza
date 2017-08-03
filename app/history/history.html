@@ -1,1 +1,17 @@
-<p>This is the partial for history.</p>
+<h3>History</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Pizzas</th>
+    <th>Price</th>
+    <th>Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="order in getOrders()">
+    <td>{{order.title}}</td>
+    <td>{{order.totalPrice}}</td>
+    <td>{{order.time}}</td>
+  </tr>
+  </tbody>
+</table>

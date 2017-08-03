@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.cart', ['ngRoute', 'CartService'])
+angular.module('myApp.cart', ['ngRoute', 'CartService', 'OrderService'])
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/cart', {
@@ -9,7 +9,7 @@ angular.module('myApp.cart', ['ngRoute', 'CartService'])
     });
   }])
 
-  .controller('CartCtrl', ['$scope', 'Cart', function ($scope, Cart) {
+  .controller('CartCtrl', ['$scope', 'Cart', 'Order', function ($scope, Cart, Order) {
     $scope.cart = Cart.get();
     $scope.getTotalPrice = function () {
       return $scope.cart.reduce(function (total, pizza) {
@@ -23,5 +23,10 @@ angular.module('myApp.cart', ['ngRoute', 'CartService'])
       Cart.remove(index);
     };
     $scope.buy = function () {
+      Order.add(
+        $scope.cart.map(function(pizza){return pizza.name}),
+        $scope.getTotalPrice()
+      );
+      Cart.reset();
     };
   }]);

@@ -1,15 +1,6 @@
 var CartService = angular.module('CartService', [])
   .service('Cart', function () {
-    var cart = [
-      {
-        name: 'test1',
-        price: 1
-      },
-      {
-        name: 'test2',
-        price: 2
-      }
-    ];
+    var cart = [];
     this.get = function () {
       return cart;
     };
@@ -21,5 +12,8 @@ var CartService = angular.module('CartService', [])
         name: name,
         price: price
       })
+    };
+    this.reset = function () {
+      cart.length = 0;
     };
   });
