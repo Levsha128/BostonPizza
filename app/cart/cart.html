@@ -10,13 +10,13 @@
   <tbody>
   <tr ng-repeat="pizza in cart">
     <td>{{pizza.name}}</td>
-    <td>{{pizza.price}}</td>
+    <td>${{pizza.price}}</td>
     <td><button ng-click="remove($index)">Remove</button></td>
   </tr>
   </tbody>
   <tfoot ng-if="hasItems()">
   <th></th>
-  <th>{{getTotalPrice()}}</th>
+  <th>${{getTotalPrice()}}</th>
   <th></th>
   </tfoot>
 </table>

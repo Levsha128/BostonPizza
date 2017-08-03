@@ -10,7 +10,7 @@
   <tbody>
   <tr ng-repeat="order in getOrders()">
     <td>{{order.title}}</td>
-    <td>{{order.totalPrice}}</td>
+    <td>${{order.totalPrice}}</td>
     <td>{{order.time}}</td>
   </tr>
   </tbody>
