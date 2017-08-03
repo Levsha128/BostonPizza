@@ -6,12 +6,12 @@
     <th>#</th>
     <th>Name</th>
     <th>Ingredients</th>
-    <th>Price</th>
+    <th><span ng-click="changeSort()">[{{sorting}}]</span>Price</th>
     <th></th>
   </tr>
   </thead>
   <tbody>
-  <tr ng-repeat="pizza in menu">
+  <tr ng-repeat="pizza in getMenu()">
     <td>{{pizza.id}}</td>
     <td>{{pizza.name}}</td>
     <td>{{pizza.ingredients.join(',')}}</td>
