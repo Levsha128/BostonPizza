@@ -10,7 +10,7 @@ angular.module('myApp.cart', ['ngRoute'])
   }])
 
   .controller('CartCtrl', ['$scope', function ($scope) {
-    $scope.order = [
+    $scope.cart = [
       {
         name: 'test1',
         price: 1
@@ -21,15 +21,15 @@ angular.module('myApp.cart', ['ngRoute'])
       }
     ];
     $scope.getTotalPrice = function () {
-      return $scope.order.reduce(function (total, pizza) {
+      return $scope.cart.reduce(function (total, pizza) {
         return total + pizza.price;
       }, 0);
     };
     $scope.hasItems = function () {
-      return $scope.order.length > 0;
+      return $scope.cart.length > 0;
     };
     $scope.remove = function (index) {
-      $scope.order.splice(index, 1);
+      $scope.cart.splice(index, 1);
     };
     $scope.buy = function () {
     };
